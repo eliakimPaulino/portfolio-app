@@ -17,22 +17,24 @@ class Header extends StatelessWidget {
             Text(
               'Welcome 😎',
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 24,
                 fontWeight: FontWeight.w300,
               ),
             ),
+            SizedBox(height: 10),
             Text(
               "Eliakim Portfolio",
               style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+                fontSize: 24,
+                fontWeight: FontWeight.w300,
               ),
             ),
           ],
         ),
         ClipRRect(
-            borderRadius: BorderRadius.circular(5),
-            child: Image.asset('assets/img/avatar1.png', height: 45))
+          borderRadius: BorderRadius.circular(5),
+          child: Image.asset('assets/img/avatar1.png', height: 45),
+        ),
       ],
     );
   }

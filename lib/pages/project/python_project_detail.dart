@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../../models/project.dart';
+import '../../models/python_project.dart';
 import '../../reponsive.dart';
 
-class ProjectDetail extends StatelessWidget {
-  final Project project;
+class PythonProjectDetail extends StatelessWidget {
+  final PythonProject project;
 
-  const ProjectDetail({
+  const PythonProjectDetail({
     Key? key,
     required this.project,
   }) : super(key: key);
@@ -54,22 +54,22 @@ class ProjectDetail extends StatelessWidget {
                   ),
                   const SizedBox(height: 25),
                   Hero(
-                    tag: project.name,
+                    tag: project.imageAsset,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(15.0),
                       child: Responsive(
-                        mobile: Image.network(
-                          project.imageUrl,
+                        mobile: Image.asset(
+                          project.imageAsset,
                           fit: BoxFit.cover,
                         ),
-                        tablet: Image.network(
-                          project.imageUrl,
+                        tablet: Image.asset(
+                          project.imageAsset,
                           fit: BoxFit.cover,
                         ),
                         desktop: SizedBox(
                           height: 350,
-                          child: Image.network(
-                            project.imageUrl,
+                          child: Image.asset(
+                            project.imageAsset,
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -88,10 +88,9 @@ class ProjectDetail extends StatelessWidget {
                   HorizontalTechView(techList: project.technologiesUsed ?? []),
                   const SizedBox(height: 10),
                   const Text(
-                      "DESCRIPTION",
-                      style:
-                          TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-                    ),
+                    "DESCRIPTION",
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                  ),
                   const SizedBox(height: 10),
                   Text(
                     project.description,
@@ -128,15 +127,19 @@ class HorizontalTechView extends StatelessWidget {
         itemCount: techList.length,
         itemBuilder: (context, index) {
           return Container(
-              alignment: Alignment.center,
-              padding: const EdgeInsets.only(right: 15.0, left: 15.0),
-              margin: const EdgeInsets.only(right: 15.0),
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black),
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.white),
-              child: Text(techList[index],
-                  style: const TextStyle(color: Colors.black)));
+            alignment: Alignment.center,
+            padding: const EdgeInsets.only(right: 15.0, left: 15.0),
+            margin: const EdgeInsets.only(right: 15.0),
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black),
+              borderRadius: BorderRadius.circular(15),
+              color: Colors.white,
+            ),
+            child: Text(
+              techList[index],
+              style: const TextStyle(color: Colors.black),
+            ),
+          );
         },
       ),
     );
