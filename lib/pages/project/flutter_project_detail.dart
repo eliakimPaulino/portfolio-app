@@ -92,7 +92,10 @@ class FlutterProjectDetail extends StatelessWidget {
                   const SizedBox(height: 10),
                   const Text(
                     "DESCRIPTION",
-                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   const SizedBox(height: 10),
                   Text(
